@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [{ "src": "local.py", "use": "@vercel/python" }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/local.py",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  ]
+}
